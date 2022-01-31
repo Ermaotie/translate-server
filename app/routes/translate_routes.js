@@ -9,8 +9,8 @@ const base_url = "https://api-free.deepl.com/v2/translate?auth_key=68b0b807-4b8a
 module.exports = function(app) {
     app.post('/',(req,res) => {
         var data = qs.stringify({
-            'text': req.body.origin,
-           'target_lang': 'ZH' 
+            'text': req.body.text,
+           'target_lang': req.body.target_lang 
            });
 
         var config = {
