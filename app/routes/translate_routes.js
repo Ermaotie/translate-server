@@ -22,8 +22,7 @@ module.exports = function(app) {
             data : data
           };
         axios(config).then(function(response){
-            // console.log(response.data.translations[0].text)
-            res.send(response.data.translations[0].text)
+            res.send(JSON.stringify(response.data))
         }).catch(function (error){
             res.send(error)
         })
